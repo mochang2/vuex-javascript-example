@@ -9,7 +9,10 @@ export const useBanner = () => {
   const isBannerOpen1 = computed(() => st.state.myBanner.isOpen);
   const isBannerOpen2 = computed(() => st.getters["myBanner/getIsOpen"]);
   const openBanner = () => {
-    st.commit("myBanner/open");
+    st
+      .commit(
+        "myBanner/open"
+      ); /* [TEST] normally execute when there is any white spaces */
   };
   const closeBanner = () => {
     st.commit("myBanner/close");
