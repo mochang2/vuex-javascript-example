@@ -20,7 +20,7 @@ const appDetail = computed(() => store.state.appDetail);
 const setScrollPosition = () => {
   store.commit(
     "setScrollPosition",
-    store.getters.getAppDetail.scrollPosition * -1
+    store.getters.getAppDetail.scrollPosition * -1 // [TEST] normally execute on "getAppDetail", but not on "scrollPosition"
   );
 };
 
