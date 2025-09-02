@@ -1,14 +1,6 @@
 # vuex-javascript-example
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+[vuex reference helper(vscode extension) 동작 확인용 테스트 레포지토리](https://github.com/mochang2/vuex-reference-helper)
 
 ## Project Setup
 
