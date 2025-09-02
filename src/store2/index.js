@@ -26,6 +26,24 @@ export default cs({
     },
     abc: (state) => state.abc,
   },
+  actions: {
+    async increment({ commit }) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit("increment"); // [TEST] normally execute when a mutation is called inside action
+          resolve();
+        }, 1000);
+      });
+    },
+    async incrementBy({ commit }, payload) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit("incrementBy", payload);
+          resolve();
+        }, 1000);
+      });
+    },
+  },
   mutations: {
     increment(state) {
       state.count++;

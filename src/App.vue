@@ -15,6 +15,12 @@ const increment = () => {
 const incrementBy = () => {
   store.commit("incrementBy", 2);
 };
+const incrementAsync = () => {
+  store.dispatch("increment");
+};
+const incrementByAsync = () => {
+  store.dispatch("incrementBy", 2);
+};
 
 const appDetail = computed(() => store.state.appDetail);
 const setScrollPosition = () => {
@@ -49,6 +55,12 @@ const openModal = () => {
 const closeModal = () => {
   store.commit("myBanner/modal/close");
 };
+const openModalAsync = () => {
+  store.dispatch("myBanner/modal/open");
+};
+const closeModalAsync = () => {
+  store.dispatch("myBanner/modal/close");
+}
 </script>
 
 <template>
@@ -58,6 +70,12 @@ const closeModal = () => {
     <button type="button" @click="increment">increment count button</button>
     <button type="button" @click="incrementBy">
       increment count double button
+    </button>
+    <button type="button" @click="incrementAsync">
+      increment count after 1 second button
+    </button>
+    <button type="button" @click="incrementByAsync">
+      increment count double after 1 second button
     </button>
   </div>
   <br />
@@ -107,6 +125,12 @@ const closeModal = () => {
   <div class="btn-wrapper">
     <button type="button" @click="openModal">open modal</button>
     <button type="button" @click="closeModal">close modal</button>
+    <button type="button" @click="openModalAsync">
+      open modal after 1 second
+    </button>
+    <button type="button" @click="closeModalAsync">
+      close modal after 1 second
+    </button>
   </div>
   <br />
   <div>
