@@ -2,7 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "#store2": ["./src/store2/index"]
+      "#store2": ["./src/store2/index2"]
     }
   },
   "exclude": ["node_modules", "dist"]
