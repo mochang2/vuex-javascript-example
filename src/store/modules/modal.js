@@ -6,7 +6,7 @@ export const modalTest = {
     isOpen: false,
   },
   getters: {
-    getIsOpen: (state) => state.isOpen,
+    getIsOpen: (state) => state.isOpen, // [TEST] noramlly find modal.js's isOpen state
   },
   actions: {
     async open({ commit }) {
@@ -17,10 +17,10 @@ export const modalTest = {
         }, 1000);
       });
     },
-    async close({ commit }) {
+    async close(context) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          commit("close");
+          context.commit("close");
           resolve();
         }, 1000);
       });
@@ -28,10 +28,10 @@ export const modalTest = {
   },
   mutations: {
     open(state) {
-      state.isOpen = true;
+      state.isOpen = true; // [TEST] noramlly find modal.js's isOpen state
     },
     close(state) {
-      state.isOpen = false;
+      state.isOpen = false; // [TEST] noramlly find modal.js's isOpen state
     },
   },
 };

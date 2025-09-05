@@ -15,11 +15,8 @@ const increment = () => {
 const incrementBy = () => {
   store.commit("incrementBy", 2);
 };
-const incrementAsync = () => {
+const incrementDoubleAsync = () => {
   store.dispatch("increment");
-};
-const incrementByAsync = () => {
-  store.dispatch("incrementBy", 2);
 };
 
 const appDetail = computed(() => store.state.appDetail);
@@ -60,7 +57,7 @@ const openModalAsync = () => {
 };
 const closeModalAsync = () => {
   store.dispatch("myBanner/modal/close");
-}
+};
 </script>
 
 <template>
@@ -71,10 +68,7 @@ const closeModalAsync = () => {
     <button type="button" @click="incrementBy">
       increment count double button
     </button>
-    <button type="button" @click="incrementAsync">
-      increment count after 1 second button
-    </button>
-    <button type="button" @click="incrementByAsync">
+    <button type="button" @click="incrementDoubleAsync">
       increment count double after 1 second button
     </button>
   </div>

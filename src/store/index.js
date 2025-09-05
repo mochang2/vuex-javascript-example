@@ -27,20 +27,20 @@ export const store = createStore({
     abc: (state) => state.abc,
   },
   actions: {
-    async increment({ commit }) {
+    async increment({ dispatch }) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          commit("increment"); // [TEST] normally execute when a mutation is called inside action
+          dispatch("incrementBy", 2); // [TEST] normally execute when a action is called inside action
           resolve();
-        }, 1000);
+        }, 500);
       });
     },
-    async incrementBy({ commit }, payload) {
+    async incrementBy(context, payload) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          commit("incrementBy", payload);
+          context.commit("incrementBy", payload);
           resolve();
-        }, 1000);
+        }, 500);
       });
     },
   },
