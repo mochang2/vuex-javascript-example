@@ -15,8 +15,11 @@ const increment = () => {
 const incrementBy = () => {
   store.commit("incrementBy", 2);
 };
-const incrementDoubleAsync = () => {
+const incrementAsync = () => {
   store.dispatch("increment");
+};
+const incrementByAsync = () => {
+  store.dispatch("incrementBy", 2);
 };
 
 const appDetail = computed(() => store.state.appDetail);
@@ -68,7 +71,10 @@ const closeModalAsync = () => {
     <button type="button" @click="incrementBy">
       increment count double button
     </button>
-    <button type="button" @click="incrementDoubleAsync">
+    <button type="button" @click="incrementAsync">
+      increment count after 1 second button
+    </button>
+    <button type="button" @click="incrementByAsync">
       increment count double after 1 second button
     </button>
   </div>

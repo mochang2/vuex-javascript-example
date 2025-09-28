@@ -30,7 +30,7 @@ export const store = createStore({
     async increment({ dispatch }) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          dispatch("incrementBy", 2); // [TEST] normally execute when a action is called inside action
+          dispatch("incrementBy", 1); // [TEST] normally execute when a action is called inside action
           resolve();
         }, 500);
       });
