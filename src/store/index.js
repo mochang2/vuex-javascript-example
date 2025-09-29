@@ -30,7 +30,7 @@ export const store = createStore({
     async increment({ dispatch }) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          dispatch("incrementBy", 1); // [TEST] normally execute when a action is called inside action
+          dispatch("incrementBy", 1); // [TEST] normally execute when a action is called inside action, normally execute even if the context is destructured
           resolve();
         }, 500);
       });
@@ -38,7 +38,7 @@ export const store = createStore({
     async incrementBy(context, payload) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          context.commit("incrementBy", payload);
+          context.commit("incrementBy", payload); // [TEST] normally execute when a mutation is called inside action, normally execute even if the context is not destructured
           resolve();
         }, 500);
       });

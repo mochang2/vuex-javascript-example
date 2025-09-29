@@ -12,7 +12,7 @@ export const modalTest = {
     async open({ commit }) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          commit("open"); // [TEST] normally execute when a mutation is called inside action of a module
+          commit("open"); // [TEST] normally execute when a mutation is called inside action of a module, normally execute even if the context is destructured
           resolve();
         }, 1000);
       });
@@ -20,7 +20,7 @@ export const modalTest = {
     async close(context) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          context.commit("close");
+          context.commit("close"); // [TEST] normally execute when a mutation is called inside action of a module, normally execute even if the context is not destructured
           resolve();
         }, 1000);
       });
